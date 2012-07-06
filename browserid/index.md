@@ -118,9 +118,9 @@ Certificate delegation is tricky and potentially opens up avenues for attacks. T
 
 * by default, a certificate chain cannot be extended, unless the last certificate is explicitly designated as allowing chaining.
 
-* certificate grants are subtractive: once a chain is contrained to a principal, its scope can no longer be broadened.
+* certificate grants are subtractive: once a chain is constrained to a principal, its scope can no longer be broadened by additional certificates. Likewise, the chain's expiration time is the minimum of the <tt>exp</tt> values from all certificates.
 
-To allow chaining, a certificate must include:
+To allow chaining, the first n-2 certificates must all include:
 
     ...
       "allowChaining": true
